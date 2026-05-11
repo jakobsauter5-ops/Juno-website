@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="JUNO St. Moritz events sample page." />
+    <title>Events | JUNO St. Moritz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body data-page="events">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <a class="brand" href="index.html" aria-label="JUNO home"><img src="assets/juno-logo-crop.png" alt="JUNO" width="1660" height="390" /></a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav" data-nav-toggle><span></span><span></span></button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary" data-site-nav>
+        <a class="nav-link" href="index.html" data-nav-page="home">Home</a>
+        <div class="nav-item has-dropdown" data-dropdown>
+          <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="events-menu" data-dropdown-toggle>Events <span class="chevron" aria-hidden="true"></span></button>
+          <div id="events-menu" class="dropdown-panel events-dropdown" data-dropdown-panel>
+            <a href="events.html#upcoming"><span>Upcoming Events</span><small>Discover upcoming JUNO nights.</small></a>
+            <a href="events.html#past"><span>Past Events</span><small>Moments from previous events.</small></a>
+            <a href="events.html#festivals"><span>Festivals</span><small>Larger concepts and seasonal experiences.</small></a>
+            <a href="events.html#private"><span>Private Events</span><small>Custom experiences and private nights.</small></a>
+          </div>
+        </div>
+        <a class="nav-link" href="news.html" data-nav-page="news">News</a>
+        <a class="nav-link" href="partner.html" data-nav-page="partner">Partner</a>
+        <a class="nav-link" href="work.html" data-nav-page="work">Work</a>
+        <div class="nav-item has-dropdown" data-dropdown>
+          <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="about-menu" data-dropdown-toggle>About us <span class="chevron" aria-hidden="true"></span></button>
+          <div id="about-menu" class="dropdown-panel about-dropdown" data-dropdown-panel>
+            <a href="about.html#story"><span>Our Story</span><small>Music, people and atmosphere in St. Moritz.</small></a>
+            <a href="about.html#gianni"><span>Gianni Bregonzio</span><small>Founder / DJ</small></a>
+            <a href="about.html#nannoise"><span>Nannoise</span><small>Founder / DJ</small></a>
+          </div>
+        </div>
+        <a class="mobile-ticket-link" href="tickets.html" data-nav-page="tickets"><span>Tickets</span><span aria-hidden="true">→</span></a>
+      </nav>
+      <a class="ticket-link" href="tickets.html" data-nav-page="tickets"><span>Tickets</span><span aria-hidden="true">→</span></a>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="container page-hero-layout">
+          <p class="eyebrow reveal">Events</p>
+          <h1 class="page-title reveal">JUNO nights, built as concepts.</h1>
+          <p class="page-copy reveal">A structured event page layout for upcoming nights, past moments, seasonal concepts and private experiences. All entries below are sample concepts.</p>
+        </div>
+      </section>
+
+      <section id="upcoming" class="section section-events">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Upcoming Events</p>
+            <h2>Sample event calendar</h2>
+            <p>Demo concepts only. Real dates, lineups and ticketing can be added later.</p>
+          </div>
+          <div class="events-grid" data-events-grid aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="past" class="section section-gallery">
+        <div class="container">
+          <div class="section-heading reveal"><p class="eyebrow">Past Events</p><h2>Recap-ready layouts.</h2><p>Prepared space for future photo galleries, aftermovies and selected moments.</p></div>
+          <div class="gallery-grid">
+            <figure class="gallery-card gallery-card-wide reveal"><div class="gallery-art gallery-art-1"></div><figcaption>Past Night</figcaption></figure>
+            <figure class="gallery-card reveal"><div class="gallery-art gallery-art-2"></div><figcaption>Recap</figcaption></figure>
+            <figure class="gallery-card reveal"><div class="gallery-art gallery-art-3"></div><figcaption>Atmosphere</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="festivals" class="section section-work">
+        <div class="container">
+          <div class="section-heading reveal"><p class="eyebrow">Festivals</p><h2>Seasonal experiences.</h2><p>Large-format concepts can be presented here with visual direction, mood and practical details.</p></div>
+          <div class="work-grid">
+            <article class="work-card reveal"><div class="work-visual"></div><h3>Winter Concept</h3><p>Placeholder for a larger alpine music experience.</p></article>
+            <article class="work-card reveal"><div class="work-visual"></div><h3>Club Format</h3><p>Space for focused indoor nightlife concepts.</p></article>
+            <article class="work-card reveal"><div class="work-visual"></div><h3>Mountain Session</h3><p>Layout for seasonal sound and atmosphere ideas.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="private" class="section section-tickets">
+        <div class="container tickets-layout">
+          <div class="section-heading reveal"><p class="eyebrow">Private Events</p><h2>Custom nights, prepared for real requests.</h2><p>Private-event content, enquiry routes and production notes can be added here later.</p></div>
+          <a class="ticket-cta-large reveal" href="index.html#contact"><span>Contact</span><span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="container footer-layout"><div><span>JUNO St. Moritz</span><span>Music · Events · Nightlife</span></div><div><span>Sample website concept</span><span>© 2026 JUNO. Sample concept.</span></div></div></footer>
+    <dialog class="ticket-modal" data-ticket-modal aria-labelledby="modal-title"><div class="modal-panel"><button class="modal-close" type="button" aria-label="Close modal" data-modal-close>×</button><p class="eyebrow" data-modal-eyebrow>Sample Event</p><h2 id="modal-title" data-modal-title>Tickets Soon</h2><p data-modal-text>This is a sample event concept. Real ticket details can be added later.</p><button class="btn btn-primary" type="button" data-modal-close>Understood</button></div></dialog>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

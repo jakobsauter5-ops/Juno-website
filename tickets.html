@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="JUNO St. Moritz tickets sample page." />
+    <title>Tickets | JUNO St. Moritz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body data-page="tickets">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <a class="brand" href="index.html" aria-label="JUNO home"><img src="assets/juno-logo-crop.png" alt="JUNO" width="1660" height="390" /></a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav" data-nav-toggle><span></span><span></span></button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary" data-site-nav>
+        <a class="nav-link" href="index.html" data-nav-page="home">Home</a>
+        <div class="nav-item has-dropdown" data-dropdown><button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="events-menu" data-dropdown-toggle>Events <span class="chevron" aria-hidden="true"></span></button><div id="events-menu" class="dropdown-panel events-dropdown" data-dropdown-panel><a href="events.html#upcoming"><span>Upcoming Events</span><small>Discover upcoming JUNO nights.</small></a><a href="events.html#past"><span>Past Events</span><small>Moments from previous events.</small></a><a href="events.html#festivals"><span>Festivals</span><small>Larger concepts and seasonal experiences.</small></a><a href="events.html#private"><span>Private Events</span><small>Custom experiences and private nights.</small></a></div></div>
+        <a class="nav-link" href="news.html" data-nav-page="news">News</a><a class="nav-link" href="partner.html" data-nav-page="partner">Partner</a><a class="nav-link" href="work.html" data-nav-page="work">Work</a>
+        <div class="nav-item has-dropdown" data-dropdown><button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="about-menu" data-dropdown-toggle>About us <span class="chevron" aria-hidden="true"></span></button><div id="about-menu" class="dropdown-panel about-dropdown" data-dropdown-panel><a href="about.html#story"><span>Our Story</span><small>Music, people and atmosphere in St. Moritz.</small></a><a href="about.html#gianni"><span>Gianni Bregonzio</span><small>Founder / DJ</small></a><a href="about.html#nannoise"><span>Nannoise</span><small>Founder / DJ</small></a></div></div>
+        <a class="mobile-ticket-link" href="tickets.html" data-nav-page="tickets"><span>Tickets</span><span aria-hidden="true">→</span></a>
+      </nav>
+      <a class="ticket-link" href="tickets.html" data-nav-page="tickets"><span>Tickets</span><span aria-hidden="true">→</span></a>
+    </header>
+    <main id="main">
+      <section class="page-hero ticket-page-hero">
+        <div class="container page-hero-layout">
+          <p class="eyebrow reveal">Tickets</p>
+          <h1 class="page-title reveal">Tickets will be available soon.</h1>
+          <p class="page-copy reveal">This page is prepared for a future ticket system. No real checkout or payment flow is connected in this sample.</p>
+          <button class="ticket-cta-large reveal" type="button" data-ticket-modal-trigger><span>Notify me later</span><span aria-hidden="true">→</span></button>
+        </div>
+      </section>
+      <section class="section section-tickets">
+        <div class="container ticket-info-grid">
+          <article class="feature-card reveal"><span>01</span><h3>Event Selection</h3><p>Future area for choosing a confirmed JUNO event.</p></article>
+          <article class="feature-card reveal"><span>02</span><h3>Ticket Types</h3><p>Placeholder for tiers, access notes and availability.</p></article>
+          <article class="feature-card reveal"><span>03</span><h3>Guest Details</h3><p>Prepared space for a later form or ticketing integration.</p></article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="container footer-layout"><div><span>JUNO St. Moritz</span><span>Music · Events · Nightlife</span></div><div><span>Sample website concept</span><span>© 2026 JUNO. Sample concept.</span></div></div></footer>
+    <dialog class="ticket-modal" data-ticket-modal aria-labelledby="modal-title"><div class="modal-panel"><button class="modal-close" type="button" aria-label="Close modal" data-modal-close>×</button><p class="eyebrow" data-modal-eyebrow>Tickets</p><h2 id="modal-title" data-modal-title>Tickets</h2><p data-modal-text>Tickets will be available soon.</p><button class="btn btn-primary" type="button" data-modal-close>Understood</button></div></dialog>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
