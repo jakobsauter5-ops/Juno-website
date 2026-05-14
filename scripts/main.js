@@ -1,4 +1,4 @@
-const sampleEvents = [
+const junoEvents = [
   {
     title: "Alpine Nights Festival",
     date: "15 January 2027",
@@ -12,7 +12,7 @@ const sampleEvents = [
     date: "12 February 2027",
     location: "St. Moritz",
     description:
-      "A dark and energetic party concept with lights, sound and a premium crowd experience.",
+      "A dark and energetic party format with lights, sound and a premium crowd experience.",
     cta: "Tickets Soon",
   },
   {
@@ -36,7 +36,7 @@ const sampleEvents = [
     date: "27 March 2027",
     location: "St. Moritz",
     description:
-      "An exclusive event concept with a private club feeling and refined alpine nightlife energy.",
+      "An exclusive event format with a private club feeling and refined alpine nightlife energy.",
     cta: "Tickets Soon",
   },
 ];
@@ -49,6 +49,10 @@ const modal = document.querySelector("[data-ticket-modal]");
 const modalEyebrow = document.querySelector("[data-modal-eyebrow]");
 const modalTitle = document.querySelector("[data-modal-title]");
 const modalText = document.querySelector("[data-modal-text]");
+const recapModal = document.querySelector("[data-recap-modal]");
+const recapModalImage = document.querySelector("[data-recap-modal-image]");
+const recapModalLabel = document.querySelector("[data-recap-modal-label]");
+const recapModalText = document.querySelector("[data-recap-modal-text]");
 const contactForm = document.querySelector("[data-contact-form]");
 const formStatus = document.querySelector("[data-form-status]");
 const dropdowns = document.querySelectorAll("[data-dropdown]");
@@ -75,7 +79,7 @@ function renderEvents(events) {
     .map(
       (event, index) => `
         <article class="event-card reveal" style="transition-delay:${index * 60}ms">
-          <span class="event-badge">Sample Event</span>
+          <span class="event-badge">JUNO Event</span>
           <div class="event-meta">
             <span>${escapeHtml(event.date)}</span>
             <span>${escapeHtml(event.location)}</span>
@@ -126,10 +130,10 @@ function openEventModal(button) {
   if (!modal || !modalTitle || !modalText) return;
 
   lastFocusedElement = document.activeElement;
-  if (modalEyebrow) modalEyebrow.textContent = "Sample Event";
+  if (modalEyebrow) modalEyebrow.textContent = "JUNO Event";
   modalTitle.textContent = button.dataset.ticket || "Tickets Soon";
   modalText.textContent =
-    "This is a sample event concept. Real ticket details can be added later.";
+    "Thank you for your interest. Details for this JUNO night will be shared soon.";
   if (!modal.open) modal.showModal();
 }
 
@@ -143,9 +147,32 @@ function openTicketModal() {
   if (!modal.open) modal.showModal();
 }
 
+function openRecapModal(trigger) {
+  if (!recapModal || !recapModalImage || !recapModalLabel || !recapModalText) return;
+
+  lastFocusedElement = document.activeElement;
+  const title = trigger.dataset.recapTitle || "Event Recap";
+  const artClass = trigger.dataset.recapArt || "gallery-art-1";
+  recapModalImage.className = `recap-modal-image gallery-art ${artClass}`;
+  recapModalLabel.textContent = title;
+  recapModalText.textContent =
+    trigger.dataset.recapText ||
+    "A high-energy night shaped by music, lights and a crowd that stayed with the sound until late.";
+  if (!recapModal.open) recapModal.showModal();
+}
+
 function closeModal() {
   if (!modal?.open) return;
   modal.close();
+
+  if (lastFocusedElement instanceof HTMLElement) {
+    lastFocusedElement.focus();
+  }
+}
+
+function closeRecapModal() {
+  if (!recapModal?.open) return;
+  recapModal.close();
 
   if (lastFocusedElement instanceof HTMLElement) {
     lastFocusedElement.focus();
@@ -210,7 +237,7 @@ function initActiveLinks() {
   observedSections.forEach((section) => observer.observe(section));
 }
 
-renderEvents(sampleEvents);
+renderEvents(junoEvents);
 initReveals();
 initActiveLinks();
 setHeaderState();
@@ -271,8 +298,18 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  const recapTrigger = target.closest("[data-recap-trigger]");
+  if (recapTrigger instanceof HTMLButtonElement) {
+    openRecapModal(recapTrigger);
+    return;
+  }
+
   if (target.closest("[data-modal-close]")) {
     closeModal();
+  }
+
+  if (target.closest("[data-recap-modal-close]")) {
+    closeRecapModal();
   }
 });
 
@@ -282,18 +319,25 @@ modal?.addEventListener("click", (event) => {
   }
 });
 
+recapModal?.addEventListener("click", (event) => {
+  if (event.target === recapModal) {
+    closeRecapModal();
+  }
+});
+
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     closeNav();
     closeDropdowns();
     closeModal();
+    closeRecapModal();
   }
 });
 
 contactForm?.addEventListener("submit", (event) => {
   event.preventDefault();
   if (formStatus) {
-    formStatus.textContent = "Thanks. This is a sample form.";
+    formStatus.textContent = "Thanks. We will get back to you soon.";
   }
   contactForm.reset();
 });
